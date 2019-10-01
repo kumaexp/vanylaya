@@ -4,6 +4,9 @@
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<script src="jquery.min.js" type="text/javascript"></script>
+	<script src="vla.js" type="text/javascript"></script>
 </head>
 <body>
 	<a href="https://instagram.com/vanylaya" target="_blank" class="button">
@@ -20,19 +23,5 @@
 
 	<iframe src="https://snapwidget.com/embed/741663" class="background first" allowtransparency="true" frameborder="0" scrolling="no"></iframe>
 	<iframe src="https://snapwidget.com/embed/741666" class="background second" allowtransparency="true" frameborder="0" scrolling="no"></iframe>
-
-	<script type="text/javascript">
-		$(function(){
-			$.get('https://api.instagram.com/v1/users/self/?access_token=258724317.1677ed0.f9b9b5c1d0324569a2b2c1c4864c4206',
-				function(data) {
-					$("#button-count").html((kFormatter(data.data.counts.followed_by)));
-				}
-				)
-			function kFormatter(num) {
-				return Math.abs(num) > 999 ? Math.sign(num)*((Math.abs(num)/1000).toFixed(1)) + 'k' : Math.sign(num)*Math.abs(num)
-			}
-
-		});
-	</script>
 </body>
 </html>
