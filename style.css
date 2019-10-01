@@ -1,0 +1,119 @@
+@import url('https://rsms.me/inter/inter.css');
+
+body {
+	font-family: 'Inter', sans-serif;
+	justify-content: center;
+	align-items: center;
+	background: #000;
+	display: flex;
+	height: 100vh;
+	padding: 0;
+	margin: 0;
+}
+
+.button {
+	transition: all .2s ease-in-out;
+	-webkit-appearance: none;
+	letter-spacing: -0.5px;
+	text-decoration: none;
+	border-radius: 100px;
+	font-family: inherit;
+	align-items: center;
+	position: relative;
+	padding: 18px 42px;
+	font-weight: 500;
+	text-align: left;
+	background: #06f;
+	appearance: none;
+	font-size: 20px;
+	cursor: pointer;
+	display: flex;
+	outline: none;
+	border: none;
+	color: #fff;
+}
+
+.button-icon {
+	margin-right: 16px;
+	height: 30px;
+	width: 30px;
+	top: 0;
+}
+
+.button-text {
+	flex-direction: column;
+	font-size: 16px;
+	display: flex;
+}
+
+.button-numbers {
+	margin-top: 4px;
+	font-size: 12px;
+	opacity: 0.6;
+}
+
+.button:hover { transform: translateY(-2px); }
+.button:active { transform: translateY(0); }
+
+.button:before {
+	animation: pulse 2s ease infinite;
+	border-radius: 100px;
+	position: absolute;
+	background: #06f;
+	content: "";
+	z-index: -1;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	top: 0;
+}
+
+@keyframes pulse {
+	0% { transform: scale(1); }
+	50% { opacity: 0.2; }
+	100% { transform: scale(1.2, 1.4); opacity: 0; }
+}
+
+.background {
+	pointer-events: none;
+	overflow: hidden;
+	position: fixed;
+	height: 100vh;
+	opacity: 0.3;
+	border: none;
+	z-index: -1;
+	width: 100%;
+	left: 0;
+	top: 0;
+}
+
+@media screen and (min-width: 769px) {
+	.first {
+		display: block;
+	}
+
+	.second {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.second {
+		display: block;
+	}
+
+	.first {
+		display: none;
+	}
+
+	.button {
+		padding: 12px 28px;
+		font-size: 12px;
+	}
+
+	.button-icon {
+		margin-right: 16px;
+		height: 25px;
+		width: 25px;
+	}
+}
