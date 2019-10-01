@@ -1,0 +1,229 @@
+@spacer: 1rem;
+@fast: .3s;
+@easing: cubic-bezier(.55, 0, .1, 1);
+
+body{
+  background-color: #282a2d;
+  background-image: url('https://i.imgsafe.org/6c147abfa3.jpg');
+  background-repeat: repeat;
+  color: white;
+  font-family: 'Oswald', sans-serif;
+  letter-spacing: .2rem;
+  margin: 0;
+  overflow: hidden;
+  perspective: 1000px;
+  text-transform: uppercase;
+}
+
+.site-wrap{
+  transition: transform @fast*2 @easing;
+  
+  &.show-all{
+    transform: rotateY(-15deg) scale(.2);
+  }
+}
+
+.panel-wrap{
+  height: 100vh;
+  width: 100vw;  
+}
+
+h1{
+  font-size: 20vmin;
+  margin: 0;
+}
+
+.panel-wrap{
+  perspective: 2000px;
+  transition: transform @fast @easing;
+  
+  &.animate--shrink,
+  &.animate--tilt,
+  &.animate--tilt2{
+    transition: transform @fast @easing @fast;
+  }
+}
+
+.panel{
+  height: 100vh;
+  position: absolute;
+  transition: transform @fast @easing;
+  width: 100vw;
+  will-change: transform;
+  
+  &:before{
+    background-color: transparent;
+    bottom: 0;
+    content: "";
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: background-color @fast @easing;
+    z-index: 2;
+    
+    .show-all &{
+      pointer-events: all;
+    }
+  }
+  &:hover{
+    .show-all &{
+      &:before{
+        background-color: rgba(255,255,255,.1);
+        cursor: pointer;
+      }
+    }
+  }
+  .animate &{
+    .animate--shrink&{
+      transform: scale(.9);
+    }
+    .animate--tilt&{
+      transform: scale(.6) rotateY(-25deg);
+    }
+    .animate--tilt2&{
+      transform: scale(.8) rotateX(25deg);
+    }
+  }
+  h1{
+    cursor: default;
+    left: 50%;
+    line-height: 1;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    user-select: none;
+  }
+  &[data-x-pos="-2"]{
+    left: -200%;
+  }
+  &[data-x-pos="-1"]{
+    left: -100%;
+  }
+  &[data-x-pos="1"]{
+    left: 100%;
+  }
+  &[data-x-pos="2"]{
+    left: 200%;
+  }
+  &[data-y-pos="-2"]{
+    top: 200%;
+  }
+  &[data-y-pos="-1"]{
+    top: 100%;
+  }
+  &[data-y-pos="1"]{
+    top: -100%;
+  }
+  &[data-y-pos="2"]{
+    top: -200%;
+  }
+}
+
+.panel__zoom{
+  cursor: pointer;
+  left: 50%;
+  opacity: .2;
+  position: absolute;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%) translateY(-12vmin);
+  transition: opacity @fast @easing;
+  user-select: none;
+  z-index: 10;
+  
+  &:hover{
+    opacity: 1;
+  }
+  .show-all &{
+    pointer-events: none;
+  }
+}
+
+.panel__nav{
+  cursor: pointer;
+  opacity: .2;
+  position: absolute;
+  transition: opacity @fast @easing;
+  user-select: none;
+  will-change: opacity;
+  
+  &--up{
+    left: 50%;
+    top: @spacer;
+    transform: translateX(-50%);
+  }
+  &--left{
+    left: @spacer;
+    top: 50%;
+    transform: translateY(-50%) rotate(-90deg) translateX(-100%);
+    transform-origin: top left;
+  }
+  &--left-top{
+    left: @spacer;
+    top: @spacer;
+  }
+  &--left-down{
+    bottom: @spacer;
+    left: @spacer;
+  }
+  &--right{
+    right: @spacer;
+    top: 50%;
+    transform: translateY(-50%) rotate(90deg) translateX(100%);
+    transform-origin: top right;
+  }
+  &--right-top{
+    right: @spacer;
+    top: @spacer;
+  }
+  &--right-down{
+    bottom: @spacer;
+    right: @spacer;
+  }
+  &--down{
+    bottom: @spacer;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  &:hover{
+    opacity: 1;
+  }
+}
+
+.panel__animation-list{
+  font-size: 3.3vmin;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%) translateY(14vmin);
+  
+  span{
+    cursor: pointer;
+    display: inline-block;
+    opacity: .2;
+    position: relative;
+    transition: opacity @fast @easing;
+    user-select: none;
+    
+    &:after{
+      border-bottom: .3vmin solid transparent;
+      bottom: 0;
+      content: "";
+      left: -1px;
+      position: absolute;
+      right: 0;
+      transition: border-color @fast @easing;
+      width: 100%;
+    }    
+    &.active,
+    &:hover,{
+      opacity: 1;
+      
+      &:after{
+        border-color: white;
+      }
+    }
+  }
+}
