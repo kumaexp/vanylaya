@@ -1,0 +1,631 @@
+body {
+	background-color: #967d46;
+	color: #171717;
+	font: 20px Impact, sans-serif;
+	line-height: 1.5;
+	margin: 0;
+	overflow-x: hidden;
+}
+
+div {
+	box-sizing: border-box;
+	position: absolute;
+}
+
+.achiev-banner,
+.eye-track-cell,
+.length-counter {
+	position: fixed;
+}
+
+.achiev-banner {
+	background-color: rgba(255, 255, 255, 0.9);
+	border-radius: 0.75em;
+	font-family: system-ui, sans-serif;
+	padding: 0.75em 1.5em;
+	text-align: center;
+	top: 0.75em;
+	left: 50%;
+	width: calc(100% - 1.5em);
+	max-width: 20em;
+	transform: translate(-50%, -115%);
+	z-index: 3;
+}
+.achiev-banner > div {
+	position: static;
+}
+.achiev-banner .achiev-name {
+	font-size: 1.5em;
+	font-weight: bold;
+}
+
+.achiev-earned {
+	animation: achievement 4s linear;
+}
+
+/* Longcat cursor tracking with eyes */
+.eye-track-cell {
+	width: 20%;
+	height: 20%;
+	z-index: 1;
+}
+.eye-track-cell:nth-of-type(2) {
+	top: 0;
+	left: 0;
+}
+.eye-track-cell:nth-of-type(2):hover ~ .longcat .right-eye, .eye-track-cell:nth-of-type(2):hover ~ .longcat .left-eye {
+	transform: rotate(90deg);
+}
+.eye-track-cell:nth-of-type(3) {
+	top: 0;
+	left: 20%;
+}
+.eye-track-cell:nth-of-type(3):hover ~ .longcat .right-eye, .eye-track-cell:nth-of-type(3):hover ~ .longcat .left-eye {
+	transform: rotate(90deg);
+}
+.eye-track-cell:nth-of-type(4) {
+	top: 0;
+	left: 40%;
+}
+.eye-track-cell:nth-of-type(4):hover ~ .longcat .right-eye, .eye-track-cell:nth-of-type(4):hover ~ .longcat .left-eye {
+	transform: rotate(0deg);
+}
+.eye-track-cell:nth-of-type(5) {
+	top: 0;
+	left: 60%;
+}
+.eye-track-cell:nth-of-type(5):hover ~ .longcat .right-eye, .eye-track-cell:nth-of-type(5):hover ~ .longcat .left-eye {
+	transform: rotate(-90deg);
+}
+.eye-track-cell:nth-of-type(6) {
+	top: 0;
+	left: 80%;
+}
+.eye-track-cell:nth-of-type(6):hover ~ .longcat .right-eye, .eye-track-cell:nth-of-type(6):hover ~ .longcat .left-eye {
+	transform: rotate(-90deg);
+}
+.eye-track-cell:nth-of-type(7) {
+	top: 20%;
+	left: 0;
+}
+.eye-track-cell:nth-of-type(7):hover ~ .longcat .right-eye, .eye-track-cell:nth-of-type(7):hover ~ .longcat .left-eye {
+	transform: rotate(63.43495deg);
+}
+.eye-track-cell:nth-of-type(8) {
+	top: 20%;
+	left: 20%;
+}
+.eye-track-cell:nth-of-type(8):hover ~ .longcat .right-eye, .eye-track-cell:nth-of-type(8):hover ~ .longcat .left-eye {
+	transform: rotate(45deg);
+}
+.eye-track-cell:nth-of-type(9) {
+	top: 20%;
+	left: 40%;
+}
+.eye-track-cell:nth-of-type(9):hover ~ .longcat .right-eye, .eye-track-cell:nth-of-type(9):hover ~ .longcat .left-eye {
+	transform: rotate(0deg);
+}
+.eye-track-cell:nth-of-type(10) {
+	top: 20%;
+	left: 60%;
+}
+.eye-track-cell:nth-of-type(10):hover ~ .longcat .right-eye, .eye-track-cell:nth-of-type(10):hover ~ .longcat .left-eye {
+	transform: rotate(-45deg);
+}
+.eye-track-cell:nth-of-type(11) {
+	top: 20%;
+	left: 80%;
+}
+.eye-track-cell:nth-of-type(11):hover ~ .longcat .right-eye, .eye-track-cell:nth-of-type(11):hover ~ .longcat .left-eye {
+	transform: rotate(-63.43495deg);
+}
+.eye-track-cell:nth-of-type(12) {
+	top: 40%;
+	left: 0;
+}
+.eye-track-cell:nth-of-type(12):hover ~ .longcat .right-eye, .eye-track-cell:nth-of-type(12):hover ~ .longcat .left-eye {
+	transform: rotate(45deg);
+}
+.eye-track-cell:nth-of-type(13) {
+	top: 40%;
+	left: 20%;
+}
+.eye-track-cell:nth-of-type(13):hover ~ .longcat .right-eye, .eye-track-cell:nth-of-type(13):hover ~ .longcat .left-eye {
+	transform: rotate(26.56505deg);
+}
+.eye-track-cell:nth-of-type(14) {
+	top: 40%;
+	left: 40%;
+}
+.eye-track-cell:nth-of-type(14):hover ~ .longcat .right-eye, .eye-track-cell:nth-of-type(14):hover ~ .longcat .left-eye {
+	transform: rotate(0deg);
+}
+.eye-track-cell:nth-of-type(15) {
+	top: 40%;
+	left: 60%;
+}
+.eye-track-cell:nth-of-type(15):hover ~ .longcat .right-eye, .eye-track-cell:nth-of-type(15):hover ~ .longcat .left-eye {
+	transform: rotate(-26.56505deg);
+}
+.eye-track-cell:nth-of-type(16) {
+	top: 40%;
+	left: 80%;
+}
+.eye-track-cell:nth-of-type(16):hover ~ .longcat .right-eye, .eye-track-cell:nth-of-type(16):hover ~ .longcat .left-eye {
+	transform: rotate(-45deg);
+}
+.eye-track-cell:nth-of-type(17) {
+	top: 60%;
+	left: 0;
+}
+.eye-track-cell:nth-of-type(17):hover ~ .longcat .right-eye, .eye-track-cell:nth-of-type(17):hover ~ .longcat .left-eye {
+	transform: rotate(33.69007deg);
+}
+.eye-track-cell:nth-of-type(18) {
+	top: 60%;
+	left: 20%;
+}
+.eye-track-cell:nth-of-type(18):hover ~ .longcat .right-eye, .eye-track-cell:nth-of-type(18):hover ~ .longcat .left-eye {
+	transform: rotate(18.43495deg);
+}
+.eye-track-cell:nth-of-type(19) {
+	top: 60%;
+	left: 40%;
+}
+.eye-track-cell:nth-of-type(19):hover ~ .longcat .right-eye, .eye-track-cell:nth-of-type(19):hover ~ .longcat .left-eye {
+	transform: rotate(0deg);
+}
+.eye-track-cell:nth-of-type(20) {
+	top: 60%;
+	left: 60%;
+}
+.eye-track-cell:nth-of-type(20):hover ~ .longcat .right-eye, .eye-track-cell:nth-of-type(20):hover ~ .longcat .left-eye {
+	transform: rotate(-18.43495deg);
+}
+.eye-track-cell:nth-of-type(21) {
+	top: 60%;
+	left: 80%;
+}
+.eye-track-cell:nth-of-type(21):hover ~ .longcat .right-eye, .eye-track-cell:nth-of-type(21):hover ~ .longcat .left-eye {
+	transform: rotate(-33.69007deg);
+}
+.eye-track-cell:nth-of-type(22) {
+	top: 80%;
+	left: 0;
+}
+.eye-track-cell:nth-of-type(22):hover ~ .longcat .right-eye, .eye-track-cell:nth-of-type(22):hover ~ .longcat .left-eye {
+	transform: rotate(26.56505deg);
+}
+.eye-track-cell:nth-of-type(23) {
+	top: 80%;
+	left: 20%;
+}
+.eye-track-cell:nth-of-type(23):hover ~ .longcat .right-eye, .eye-track-cell:nth-of-type(23):hover ~ .longcat .left-eye {
+	transform: rotate(14.03624deg);
+}
+.eye-track-cell:nth-of-type(24) {
+	top: 80%;
+	left: 40%;
+}
+.eye-track-cell:nth-of-type(24):hover ~ .longcat .right-eye, .eye-track-cell:nth-of-type(24):hover ~ .longcat .left-eye {
+	transform: rotate(0deg);
+}
+.eye-track-cell:nth-of-type(25) {
+	top: 80%;
+	left: 60%;
+}
+.eye-track-cell:nth-of-type(25):hover ~ .longcat .right-eye, .eye-track-cell:nth-of-type(25):hover ~ .longcat .left-eye {
+	transform: rotate(-14.03624deg);
+}
+.eye-track-cell:nth-of-type(26) {
+	top: 80%;
+	left: 80%;
+}
+.eye-track-cell:nth-of-type(26):hover ~ .longcat .right-eye, .eye-track-cell:nth-of-type(26):hover ~ .longcat .left-eye {
+	transform: rotate(-26.56505deg);
+}
+
+.length-counter {
+	top: 0.75em;
+	left: 0.75em;
+	z-index: 2;
+}
+
+.count {
+	color: #fff;
+	font-size: 2em;
+	line-height: 1;
+	-webkit-text-stroke: 2px #111;
+}
+
+/* Longcat herself */
+.longcat, .barrier {
+	position: relative;
+}
+
+.longcat {
+	font-size: 0.5em;
+	margin: auto;
+	width: 34.5em;
+	height: 101vh;
+	transition: height 0.2s ease-out;
+}
+
+.right-ear,
+.left-ear,
+.right-arm,
+.right-paw,
+.head,
+.right-cheek,
+.left-cheek,
+.left-arm,
+.left-paw,
+.tail,
+.tail-outer,
+.tail-outer::after {
+	background-color: #e8e8e8;
+}
+
+.right-arm,
+.right-paw,
+.right-eye,
+.left-eye,
+.head,
+.right-leg,
+.left-leg {
+	border-radius: 50%;
+}
+
+/* Top */
+.right-ear {
+	background-image: radial-gradient(75% 225% at 25% 100%, #f0c0c0, #f0c0c0 50%, rgba(240, 192, 192, 0) 51%);
+	border-radius: 4em 4em 0 0 / 16em 16em 0 0;
+	width: 2em;
+	height: 4em;
+	top: 1em;
+	left: 11.5em;
+	transform: rotate(-40deg);
+}
+
+.left-ear {
+	background-image: radial-gradient(75% 188% at 50% 100%, #f0c0c0, #f0c0c0 50%, rgba(0, 0, 0, 0) 51%);
+	border-radius: 8em 8em 0 0 / 16em 16em 0 0;
+	width: 3em;
+	height: 4em;
+	left: 20.5em;
+	transform: rotate(30deg);
+}
+
+.right-arm {
+	background-image: linear-gradient(rgba(209, 209, 209, 0), rgba(209, 209, 209, 0) 30%, #d1d1d1 31%);
+	width: 13em;
+	height: 4.5em;
+	top: 7em;
+	left: 3.5em;
+	transform: rotate(15deg);
+}
+
+.right-paw {
+	background-image: radial-gradient(2.4em 2.6em at 1.8em 1.3em, #d1d1d1, #d1d1d1 50%, rgba(209, 209, 209, 0) 51%), radial-gradient(2.4em 2.3em at 2.1em 1em, #a2a2a2, #a2a2a2 50%, rgba(209, 209, 209, 0) 51%), radial-gradient(2.4em 2.6em at 3.8em 1.3em, #d1d1d1, #d1d1d1 50%, rgba(209, 209, 209, 0) 51%), radial-gradient(2.4em 2.4em at 4.1em 1.2em, #a2a2a2, #a2a2a2 50%, rgba(162, 162, 162, 0) 51%), radial-gradient(2.4em 2.6em at 4.9em 1.3em, #d1d1d1, #d1d1d1 50%, rgba(209, 209, 209, 0) 51%), radial-gradient(2.4em 2.4em at 5.2em 1.2em, #a2a2a2, #a2a2a2 50%, rgba(162, 162, 162, 0) 51%), linear-gradient(#d1d1d1, #d1d1d1 72%, rgba(209, 209, 209, 0) 73%);
+	border-radius: 3em;
+	width: 7.2em;
+	height: 3.6em;
+	top: 0.8em;
+	left: 0;
+	transform: rotate(165deg);
+	transform-origin: 1.8em 1.8em;
+}
+
+.head {
+	background-image: radial-gradient(2em 2em at 38% 53%, #e8e8e8, #e8e8e8 50%, rgba(232, 232, 232, 0) 51%), radial-gradient(95% 80% at 45% 63%, #d1d1d1, #d1d1d1 50%, rgba(209, 209, 209, 0) 51%);
+	width: 12em;
+	height: 9em;
+	top: 2.8em;
+	left: 12em;
+	transform: rotate(-5deg);
+}
+
+.right-eye, .left-eye {
+	background-color: black;
+	box-shadow: 0 0.2em 0 0.2em #a0a050 inset;
+	width: 2em;
+	height: 2em;
+	top: 2.5em;
+	transition: transform 0.2s linear;
+	transform: rotate(-135deg);
+}
+
+.right-eye {
+	left: 1.5em;
+}
+
+.left-eye {
+	left: 5.5em;
+}
+
+.nose-mouth {
+	background-color: #e07070;
+	background-image: radial-gradient(0.5em 0.5em at 0.8em 0.7em, #000000, #000000 50%, rgba(0, 0, 0, 0) 60%), radial-gradient(0.5em 0.5em at 1.6em 0.7em, #000000, #000000 50%, rgba(0, 0, 0, 0) 60%), radial-gradient(1.6em 0.1em at 1.2em 2.2em, #000000, #000000 50%, rgba(0, 0, 0, 0) 60%);
+	border-radius: 50% 50% 33% 33%;
+	width: 2.5em;
+	height: 2.5em;
+	top: 4.5em;
+	left: 3.2em;
+}
+
+.right-cheek, .left-cheek {
+	background-color: #d1d1d1;
+	background-image: radial-gradient(0.2em 0.2em at 0.6em 0.6em, #a2a2a2, #a2a2a2 50%, rgba(162, 162, 162, 0) 60%), radial-gradient(0.2em 0.2em at 1.2em 0.3em, #a2a2a2, #a2a2a2 50%, rgba(162, 162, 162, 0) 60%), radial-gradient(0.2em 0.2em at 1.8em 0.6em, #a2a2a2, #a2a2a2 50%, rgba(162, 162, 162, 0) 60%), radial-gradient(0.2em 0.2em at 0.6em 1.2em, #a2a2a2, #a2a2a2 50%, rgba(162, 162, 162, 0) 60%), radial-gradient(0.2em 0.2em at 1.2em 0.9em, #a2a2a2, #a2a2a2 50%, rgba(162, 162, 162, 0) 60%), radial-gradient(0.2em 0.2em at 1.8em 1.2em, #a2a2a2, #a2a2a2 50%, rgba(162, 162, 162, 0) 60%), radial-gradient(0.2em 0.2em at 1.2em 1.5em, #a2a2a2, #a2a2a2 50%, rgba(162, 162, 162, 0) 60%);
+	border-radius: 50%;
+	width: 2.5em;
+	height: 2em;
+	top: 5em;
+}
+
+.right-cheek {
+	left: 2em;
+	transform: rotate(-8deg);
+}
+
+.left-cheek {
+	left: 4.4em;
+	transform: rotate(8deg);
+}
+
+.left-arm {
+	background-image: linear-gradient(rgba(209, 209, 209, 0), rgba(209, 209, 209, 0) 30%, #d1d1d1 31%);
+	border-radius: 50%;
+	width: 10.5em;
+	height: 4.5em;
+	top: 6.5em;
+	left: 18.9em;
+	transform: rotate(40deg);
+}
+
+.left-paw {
+	background-image: radial-gradient(0.6em 0.9em at 20% 60%, #8b8b8b, #8b8b8b 50%, rgba(139, 139, 139, 0) 55%), radial-gradient(0.6em 0.9em at 38% 40%, #8b8b8b, #8b8b8b 50%, rgba(139, 139, 139, 0) 55%), radial-gradient(0.6em 0.9em at 60% 40%, #8b8b8b, #8b8b8b 50%, rgba(139, 139, 139, 0) 55%), radial-gradient(0.6em 0.9em at 80% 60%, #8b8b8b, #8b8b8b 50%, rgba(139, 139, 139, 0) 55%), radial-gradient(1.5em 1.5em at 50% 75%, #8b8b8b, #8b8b8b 50%, rgba(139, 139, 139, 0) 55%), radial-gradient(87% 87% at 54% 55%, #d1d1d1, #d1d1d1 50%, rgba(139, 139, 139, 0) 51%);
+	border-radius: 3em;
+	width: 4.5em;
+	height: 4.5em;
+	top: 0;
+	left: -1em;
+	transform: rotate(-50deg);
+}
+
+.whisker {
+	border-top: 0.1em solid white;
+	width: 6em;
+	height: 0;
+}
+.whisker:nth-child(n+6):nth-child(-n+10) {
+	transform-origin: 100% 0;
+}
+.whisker:nth-child(n+11):nth-child(-n+15) {
+	transform-origin: 0 0;
+}
+.whisker:nth-child(6) {
+	transform: rotate(5deg);
+	top: 5.2em;
+	left: -2.8em;
+}
+.whisker:nth-child(7) {
+	transform: rotate(-3deg);
+	top: 5.6em;
+	left: -3.4em;
+}
+.whisker:nth-child(8) {
+	transform: rotate(-13deg);
+	top: 5.9em;
+	left: -2.8em;
+}
+.whisker:nth-child(9) {
+	transform: rotate(-20deg);
+	top: 6.2em;
+	left: -3.4em;
+}
+.whisker:nth-child(10) {
+	transform: rotate(-29deg);
+	top: 6.5em;
+	left: -2.7em;
+}
+.whisker:nth-child(11) {
+	transform: rotate(5deg);
+	top: 5.2em;
+	left: 5.7em;
+}
+.whisker:nth-child(12) {
+	transform: rotate(7deg);
+	top: 5.6em;
+	left: 6.2em;
+}
+.whisker:nth-child(13) {
+	transform: rotate(12deg);
+	top: 5.8em;
+	left: 5.6em;
+}
+.whisker:nth-child(14) {
+	transform: rotate(18deg);
+	top: 6.2em;
+	left: 6.2em;
+}
+.whisker:nth-child(15) {
+	transform: rotate(21deg);
+	top: 6.5em;
+	left: 5.5em;
+}
+
+/* Body */
+.torso {
+	animation: hang 1s linear infinite alternate;
+	background-color: #c5c5c5;
+	border-radius: 2.5em / 16em 16em 2em 2em;
+	box-shadow: -0.3em 0 0 2em #d1d1d1 inset;
+	top: 8.4em;
+	left: 13.5em;
+	min-height: 28em;
+	height: calc(100% - 32em);
+	width: 11.5em;
+	position: relative;
+	transform: rotate(0deg);
+	transform-origin: 5.7em 0;
+	transition: height 0.25s ease-out;
+}
+
+.bottom {
+	background-color: #c5c5c5;
+	border-radius: 0 0 8em 8em / 0 0 16em 16em;
+	box-shadow: -0.3em -2em 0 2em #d1d1d1 inset;
+	top: calc(100% - 2em);
+	width: 100%;
+	height: 10em;
+}
+.bottom::after {
+	content: "";
+	display: block;
+	width: 100%;
+	height: 30em;
+}
+
+.tail, .tail-outer {
+	background-image: linear-gradient(rgba(209, 209, 209, 0), rgba(209, 209, 209, 0) 30%, #d1d1d1 31%);
+	border-radius: 0 2em 2em 0;
+	height: 4em;
+}
+
+.tail {
+	animation: wagTail 2s ease-in infinite alternate;
+	width: 10em;
+	top: 0;
+	left: 50%;
+	transform: rotate(30deg);
+	transform-origin: 0 2em;
+	z-index: -1;
+}
+
+.tail-outer {
+	animation: wagOuterTail 2s ease-in infinite alternate;
+	transform: rotate(-30deg);
+	transform-origin: 0 2em;
+	width: 8em;
+	left: 8em;
+}
+.tail-outer::after {
+	background-image: linear-gradient(160deg, rgba(209, 209, 209, 0), rgba(209, 209, 209, 0) 40%, #d1d1d1 41%);
+	border-left: 0.1em solid #a2a2a2;
+	border-radius: 50%;
+	content: "";
+	display: block;
+	margin: 0 0 0 auto;
+	height: 4em;
+	width: 4em;
+}
+
+.right-leg,
+.left-leg,
+.right-lower-leg,
+.left-lower-leg,
+.right-foot,
+.left-foot {
+	background-color: #d1d1d1;
+	z-index: -2;
+}
+
+.right-leg, .left-leg {
+	animation: pivotLeg 1s linear infinite alternate;
+	top: 2em;
+	height: 13em;
+	width: 5.5em;
+	transform-origin: 2.7em 2.7em;
+}
+
+.left-leg {
+	right: 0;
+}
+
+.right-lower-leg,
+.left-lower-leg {
+	border-radius: 15% 15% 50% 50%;
+	top: 73%;
+	height: 9em;
+	width: 4.4em;
+	transform-origin: 2.2em 2.2em;
+}
+
+.right-lower-leg {
+	left: 0.6em;
+	transform: rotate(-5deg);
+}
+
+.left-lower-leg {
+	left: 0.3em;
+	transform: rotate(5deg);
+}
+
+.right-foot, .left-foot {
+	background-image: radial-gradient(0.3em 1.5em at 25% 93%, #a2a2a2, #a2a2a2 50%, rgba(0, 0, 0, 0) 60%), radial-gradient(0.3em 1.5em at 50% 93%, #a2a2a2, #a2a2a2 50%, rgba(0, 0, 0, 0) 60%), radial-gradient(0.3em 1.5em at 75% 93%, #a2a2a2, #a2a2a2 50%, rgba(0, 0, 0, 0) 60%);
+	border-radius: 2em;
+	transform-origin: 1em 1em;
+	top: 67%;
+	left: 0.5em;
+	height: 8.4em;
+	width: 3.5em;
+}
+
+.right-foot {
+	transform: rotate(15deg);
+}
+
+.left-foot {
+	transform: rotate(-15deg);
+}
+
+/* To be observed by IntersectionObserver */
+.barrier {
+	width: 100%;
+	height: 3em;
+}
+
+/* Animations */
+@keyframes hang {
+	from {
+		transform: rotate(0.5deg);
+	}
+	to {
+		transform: rotate(-0.5deg);
+	}
+}
+@keyframes pivotLeg {
+	from {
+		transform: rotate(1.5deg);
+	}
+	to {
+		transform: rotate(-1.5deg);
+	}
+}
+@keyframes wagTail {
+	from, 50% {
+		transform: rotate(30deg);
+	}
+	to {
+		transform: rotate(20deg);
+	}
+}
+@keyframes wagOuterTail {
+	from, 50% {
+		transform: rotate(-30deg);
+	}
+	to {
+		transform: rotate(-60deg);
+	}
+}
+@keyframes achievement {
+	from {
+		transform: translate(-50%, -115%);
+	}
+	10%, 90% {
+		transform: translate(-50%, 0);
+	}
+	to {
+		transform: translate(-50%, -115%);
+	}
+}
